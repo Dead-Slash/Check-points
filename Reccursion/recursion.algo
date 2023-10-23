@@ -1,6 +1,19 @@
-ALGORITHM algorithm_name
+FUNCTION is_palindrom(str:STRING) : BOOLEAN
 VAR
     set_declarations
 BEGIN
-    set_instructions
+      IF (str .length <=1) THEN
+        RETURN true
+      END_IF
+      
+      
+      IF (str[0] = str[str .length-1]) THEN
+        Substr:= " ";
+        FOR i FROM 1 TO str .length-2 STEP step  DO
+            Substr:= Substr + str[i]
+        END_FOR
+        RETURN is_palindrom (Substr)
+      ELSE 
+      RETURN false   
+      END_IF
 END
